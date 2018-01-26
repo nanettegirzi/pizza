@@ -23,19 +23,6 @@ Pizza.prototype.cost = function(size) {
   }
 }
 
-
-// function calcCost(pizza, size) {
-//   if (pizza.size == "Small") {
-//     pizza.price += 10;
-//   }
-//   else if (pizza.size == "Medium") {
-//     pizza.price += 12;
-//   }
-//   else if (pizza.size == "Large") {
-//     pizza.price += 14;
-//   }
-// }
-
 //front end
 $(document).ready(function(){
   $("form#orderpizza").submit(function(event){
@@ -57,12 +44,12 @@ $(document).ready(function(){
         newPizza.price.push(pizzaCost);
         console.log(pizzaCost)
 
+    $("#order-confirmation").show();
 
     $("#confirmSize").text(newPizza.size);
     $("#confirmSauce").text(newPizza.sauce);
     $("#confirmCheese").text(newPizza.cheese);
     $("#confirmToppings").text(newPizza.toppings);
     $("#confirmPrice").text(newPizza.price);
-  })
-
-})
+  });
+});

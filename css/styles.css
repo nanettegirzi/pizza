@@ -1,3 +1,32 @@
 .jumbotron {
   text-align: center;
+  background-image: url("../img/pizza.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+  color: white;
+}
+
+.jumbotron p {
+  font-size: 50px
+}
+
+h1 {
+  font-size: 120px;
+}
+
+
+hr {
+  background-color: white;
+}
+
+body {
+  background-color: #ef5350;
+  background-size: cover;
+}
+
+
+#order-confirmation {
+  display: none;
 }
