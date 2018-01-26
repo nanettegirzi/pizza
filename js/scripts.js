@@ -5,20 +5,36 @@ function Pizza(size, sauce, cheese, toppings) {
   this.sauce = sauce;
   this.cheese = cheese;
   this.toppings = [];
-  this.price = 0;
+  this.price = [];
+
 }
 
-function calcCost(pizza, size) {
-  if (pizza.size == "small") {
-    pizza.price += 10;
+Pizza.prototype.cost = function(size) {
+  var amount = 10
+
+  if (this.size == "Small") {
+     return amount += 2;
   }
-  else if (pizza.size == "medium") {
-    pizza.price += 12;
+  else if (this.size == "Medium") {
+     return amount += 4;
   }
-  else if (pizza.size == "large") {
-    pizza.price += 14;
+  else if (this.size == "Large") {
+    return amount += 6;
   }
 }
+
+
+// function calcCost(pizza, size) {
+//   if (pizza.size == "Small") {
+//     pizza.price += 10;
+//   }
+//   else if (pizza.size == "Medium") {
+//     pizza.price += 12;
+//   }
+//   else if (pizza.size == "Large") {
+//     pizza.price += 14;
+//   }
+// }
 
 //front end
 $(document).ready(function(){
@@ -34,14 +50,18 @@ $(document).ready(function(){
     $("input:checkbox[name=toppings]:checked").each(function(){
       var userToppings = $(this).val();
       newPizza.toppings.push(userToppings)
+      console.log(userToppings)
       });
 
-      calcCost(newPizza);
+      var pizzaCost = newPizza.cost(newPizza.size);
+        newPizza.price.push(pizzaCost);
+        console.log(pizzaCost)
+
 
     $("#confirmSize").text(newPizza.size);
     $("#confirmSauce").text(newPizza.sauce);
     $("#confirmCheese").text(newPizza.cheese);
-    $("#confirmToppings").text(newPizza.userToppings);
+    $("#confirmToppings").text(newPizza.toppings);
     $("#confirmPrice").text(newPizza.price);
   })
 
