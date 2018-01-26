@@ -1,66 +1,48 @@
-//business
+//back end
 
-function Pizza(size, cheese, sauce, toppings) {
+function Pizza(size, sauce, cheese, toppings) {
   this.size = size;
-  this.cheese = cheese;
   this.sauce = sauce;
+  this.cheese = cheese;
   this.toppings = [];
   this.price = 0;
 }
 
-Pizza.prototype.cost = function(size) {
-
-  if(pizza.size == "small") {
+function calcCost(pizza, size) {
+  if (pizza.size == "small") {
     pizza.price += 10;
-
   }
   else if (pizza.size == "medium") {
     pizza.price += 12;
-
   }
   else if (pizza.size == "large") {
     pizza.price += 14;
   }
 }
 
-
-
-
-
 //front end
 $(document).ready(function(){
-
-  fillMovieForm(moviesArray);
-
   $("form#orderpizza").submit(function(event){
     event.preventDefault();
 
-    var movieName = $("#movieName").val();
-    var timeOfDay = $("#timeOfDay").val();
-    var userAge = $("#userAge").val();
+    var size = $("input:radio[name=size]:checked").val();
+    var cheese = $("input:radio[name=cheese]:checked").val();
+    var sauce = $("input:radio[name=sauce]:checked").val();
 
-    //if any fields are not selected, alert user. Otherwise, display purchaseConfirmation div
-    if (formCheck(movieName, timeOfDay, userAge) == true){
-      $(".purchaseConfirmation").show();
-    }
-    else {
-      $(".purchaseConfirmation").hide();
-    };
+    var newPizza = new Pizza (size, sauce, cheese);
 
-    getMovie(movieName);
-    //console.log(myMovie);
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      var userToppings = $(this).val();
+      newPizza.toppings.push(userToppings)
+      });
 
-    var newPizza = new Pizza(movieName, timeOfDay, userAge);
-    //console.log(newTicket);
+      calcCost(newPizza);
 
-    calcPrice(newTicket, myMovie);
-    //console.log(newTicket);
-
-    $("#confirmSize").text(newTicket.movieName);
-    $("#confirmCheese").text(newTicket.timeOfDay);
-    $("#confirmSauce").text(newTicket.price);
-    $("#confirmToppings").text(newTicket.movieName);
-    $("#confirmPrice").text(newTicket.price);
+    $("#confirmSize").text(newPizza.size);
+    $("#confirmSauce").text(newPizza.sauce);
+    $("#confirmCheese").text(newPizza.cheese);
+    $("#confirmToppings").text(newPizza.userToppings);
+    $("#confirmPrice").text(newPizza.price);
   })
 
 })

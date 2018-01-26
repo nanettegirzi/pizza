@@ -24,19 +24,19 @@
             <h3>Choose a size:</h3>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="small">
+                <input type="radio" name="size" value="Small">
                 8" Small Pizza - $10
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="medium">
+                <input type="radio" name="size" value="Medium">
                 10" Medium Pizza - $12
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="large">
+                <input type="radio" name="size" value="Large">
                 12" Large Pizza - $14
               </label>
             </div>
@@ -46,25 +46,25 @@
             <h3>Choose a Cheese:</h3>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="nocheese">
+                <input type="radio" name="cheese" value="No Cheese">
                 No Cheese
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="mozzarella">
+                <input type="radio" name="cheese" value="Mozzarella">
                 Mozerella
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="parmesan">
+                <input type="radio" name="cheese" value="Parmesan">
                 Parmesan
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="feta">
+                <input type="radio" name="cheese" value="feta">
                 Feta
               </label>
             </div>
@@ -74,20 +74,20 @@
             <h3>Choose a Sauce:</h3>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="red-sauce">
-                Red Tomato Sauce
+                <input type="radio" name="sauce" value="Red Sauce">
+                Red Sauce
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="pesto">
-                Pesto Base
+                <input type="radio" name="sauce" value="Pesto">
+                Pesto
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="size" value="olive-oil">
-                Olive Oil Base
+                <input type="radio" name="sauce" value="Olive Oil and Garlic">
+                Olive Oil and Garlic
               </label>
             </div>
           </div>
@@ -97,7 +97,7 @@
           <div class="col-md-6">
             <div class="additional-toppings">
             <div class="form-group">
-              <h3>Additional Toppings - $1 each:</h3>
+              <h3>Additional Toppings:</h3>
                 <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
                 <input type="checkbox" name="toppings" value="Sausage"> Suasage<br>
                 <input type="checkbox" name="toppings" value="Basil"> Basil<br>
@@ -108,8 +108,10 @@
         </div>
       </div>
         <br>
-      </form>
         <button type="submit" name="button" class = "btn btn-primary">Confirm Purchase</button>
+
+      </form>
+
 
         <hr>
         <br>
@@ -121,9 +123,9 @@
           <p><b>Order details below:</b></p>
 
           <p><b>Size:</b><span id="confirmSize"></span></p>
+          <p><b>Sauce:</b><span id="confirmSauce"></span></p>
           <p><b>Cheese:</b><span id="confirmCheese"></span></p>
-          <p><b>Sauce:</b><span id="confirmSauce"></span>.</p>
-          <p><b>Additional Toppings:</b> <span id="confirmToppings"></span></p>
+          <p><b>Toppings:</b> <span id="confirmToppings"></span></p>
           <p><b>Price:</b>$<span id="confirmPrice">.00</span></p>
 
         </div>
