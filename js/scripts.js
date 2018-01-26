@@ -1,34 +1,29 @@
 //business
 
-function Pizza(size) {
+function Pizza(size, cheese, sauce, toppings) {
   this.size = size;
+  this.cheese = cheese;
+  this.sauce = sauce;
   this.toppings = [];
-  this.cheese = [];
-  this.sauce = [];
+  this.price = 0;
 }
 
-function calcPrice(ticket, movie) {
+Pizza.prototype.cost = function(size) {
 
-//look at userAge and adjust price accordingly
   if(pizza.size == "small") {
     pizza.price += 10;
+
   }
   else if (pizza.size == "medium") {
-    ticket.price += 12;
+    pizza.price += 12;
+
   }
   else if (pizza.size == "large") {
     pizza.price += 14;
   }
-
-  //if the movie is a new release, add 3 to ticket price
-  if(movie.newRelease == true){
-    ticket.price += 3;
-  }
-
-  if(ticket.timeOfDay == "Evening") {
-    ticket.price += 5;
-  }
 }
+
+
 
 
 
@@ -62,9 +57,10 @@ $(document).ready(function(){
     //console.log(newTicket);
 
     $("#confirmSize").text(newTicket.movieName);
-    $("#confirmToppings").text(newTicket.timeOfDay);
+    $("#confirmCheese").text(newTicket.timeOfDay);
+    $("#confirmSauce").text(newTicket.price);
+    $("#confirmToppings").text(newTicket.movieName);
     $("#confirmPrice").text(newTicket.price);
-
   })
 
 })
