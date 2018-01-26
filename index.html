@@ -1,14 +1,135 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
-    <script src="js/scripts.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Nano's Pizza</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+  <script src="js/scripts.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Nano's Pizza</title>
+</head>
+<body>
   <body>
 
-  </body>
-</html>
+    <div class="jumbotron">
+      <h1>Nano's Pizza</h1>
+      <hr width = 50%>
+      <p>Ballard's Best Pizza</p>
+    </div>
+    <br>
+    <div class="container">
+      <form id="orderpizza">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Choose a size:</h3>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="small">
+                8" Small Pizza - $10
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="medium">
+                10" Medium Pizza - $12
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="large">
+                12" Large Pizza - $14
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Choose a Cheese:</h3>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="nocheese">
+                No Cheese
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="mozzarella">
+                Mozerella
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="parmesan">
+                Parmesan
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="feta">
+                Feta
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Choose a Sauce:</h3>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="red-sauce">
+                Red Tomato Sauce
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="pesto">
+                Pesto Base
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="size" value="olive-oil">
+                Olive Oil Base
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="additional-toppings">
+            <div class="form-group">
+              <h3>Additional Toppings - $1 each:</h3>
+                <input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni<br>
+                <input type="checkbox" name="toppings" value="Sausage"> Suasage<br>
+                <input type="checkbox" name="toppings" value="Basil"> Basil<br>
+                <input type="checkbox" name="toppings" value="Onion"> Onion<br>
+                <input type="checkbox" name="toppings" value="Mushrooms"> Mushrooms<br>
+            </div>
+          </div>
+        </div>
+      </div>
+        <br>
+      </form>
+        <button type="submit" name="button" class = "btn btn-primary">Confirm Purchase</button>
+
+        <hr>
+        <br>
+        <br>
+
+        <div id="order-confirmation">
+          <p><b>Thank you for ordering from Nano's Pizza. Your order is confirmed.</b></p>
+
+          <p><b>Order details below:</b></p>
+
+          <p><b>Size:</b><span id="confirmSize"></span></p>
+          <p><b>Cheese:</b><span id="confirmCheese"></span></p>
+          <p><b>Sauce:</b><span id="confirmSauce"></span>.</p>
+          <p><b>Additional Toppings:</b> <span id="confirmToppings"></span></p>
+          <p><b>Price:</b>$<span id="confirmPrice">.00</span></p>
+
+        </div>
+
+      </div>
+
+
+    </body>
+    </html>
