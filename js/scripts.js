@@ -23,6 +23,8 @@ Pizza.prototype.cost = function(size) {
   }
 }
 
+
+
 //front end
 $(document).ready(function(){
   $("form#orderpizza").submit(function(event){
@@ -51,5 +53,7 @@ $(document).ready(function(){
     $("#confirmCheese").text(newPizza.cheese);
     $("#confirmToppings").text(newPizza.toppings);
     $("#confirmPrice").text(newPizza.price);
+
+
   });
 });
