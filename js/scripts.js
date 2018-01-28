@@ -23,11 +23,14 @@ Pizza.prototype.cost = function(size) {
   }
 }
 
+function clearForm() {
+    document.getElementById("orderpizza").reset();
+}
 
 
 //front end
 $(document).ready(function(){
-  $("form#orderpizza").submit(function(event){
+  $("#orderpizza").submit(function(event){
     event.preventDefault();
 
     var size = $("input:radio[name=size]:checked").val();
@@ -46,7 +49,8 @@ $(document).ready(function(){
         newPizza.price.push(pizzaCost);
         console.log(pizzaCost)
 
-    $("#order-confirmation").show();
+    //$("#order-confirmation").show();
+
 
     $("#confirmSize").text(newPizza.size);
     $("#confirmSauce").text(newPizza.sauce);
@@ -54,6 +58,18 @@ $(document).ready(function(){
     $("#confirmToppings").text(newPizza.toppings);
     $("#confirmPrice").text(newPizza.price);
 
+  });
+
+  $("button#confirm").click(function() {
+    $("#order-confirmation").show();
+    $("#orderpizza").hide();
+  });
+
+  $("button#neworder").click(function() {
+    $("#order-confirmation").hide();
+    $("#orderpizza").show();
+
 
   });
+
 });

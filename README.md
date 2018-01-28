@@ -11,7 +11,7 @@ This program allows a user to order a pizza, and return the confirmed order and 
 ## Setup/Installation Requirements
 
 * Go to https://github.com/nanette/pizza
-*
+* https://nanettegirzi.github.io/pizza
 
 
 ## Specifications
